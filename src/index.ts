@@ -1,5 +1,5 @@
 import type { ManagerOptions, SocketOptions } from 'socket.io-client'
-import io from 'socket.io-client'
+import { io } from 'socket.io-client'
 
 export type TTransientSocketOptions = ManagerOptions & SocketOptions
 
