@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CodeAwareness/transient.client"
+    "url": "git+https://github.com/CodeAwareness/transient.client.git"
   },
   "author": "Mark Vasile <mark.vasile@peer8.com>",
   "homepage": "https://github.com/CodeAwareness/transient.client/tree/main#readme",
@@ -19,17 +19,25 @@
     "transient",
     "websockets"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./src/index.js"
+    "import": "./wrapper.mjs",
+    "require": "./dist/index.js"
   },
+  "engines": {
+    "node": ">= 12"
+  },
+  "files": [
+    "LICENSE",
+    "dist/*"
+  ],
   "scripts": {
     "build-ts": "tsc --build tsconfig.json",
     "build": "npm run build-ts && npm run lint",
-    "lint": "eslint \"src/**/*.{js,ts}\" \"tests/**/*.{js,ts}\" --fix",
+    "prepublish": "npm run build",
+    "lint": "eslint \"src/**/*.{js,ts}\" \"tests/**/*.{js,ts}\" \"wrapper.mjs\" --fix",
     "test": "jest --forceExit --verbose",
     "test:coverage": "jest --forceExit --coverage --verbose",
     "test:watch": "jest --watchAll --verbose",
@@ -52,5 +60,8 @@
     "eslint-plugin-security": "^1.4.0",
     "jest": "^27.4.7",
     "typescript": "^4.5.5"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

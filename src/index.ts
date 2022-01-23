@@ -1,4 +1,7 @@
+import type { ManagerOptions, SocketOptions } from 'socket.io-client'
 import io from 'socket.io-client'
+
+export type TTransientSocketOptions = ManagerOptions & SocketOptions
 
 export type TLogger = {
   error: (...args: any[]) => void
@@ -89,7 +92,7 @@ const transmit = (action: string, data?: any) => {
  */
 const init = (options: TTransientHandler): Promise<void> => {
   const { url, onError } = options
-  logger = options.logger
+  if (options.logger) logger = options.logger
   serverURL = url
   if (!wsocket) reconnect()
 
@@ -119,6 +122,7 @@ const init = (options: TTransientHandler): Promise<void> => {
 
 export const tcClient = {
   init,
+  reconnect,
   setToken,
   socketOptions,
   transmit,
