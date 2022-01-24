@@ -1,4 +1,3 @@
-import json from '@rollup/plugin-json'
 import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
 import resolve from '@rollup/plugin-node-resolve'
@@ -13,8 +12,6 @@ export default [
       file: 'index.js'
     },
     plugins: [
-      json(),
-
       resolve({
         browser: true
       }),

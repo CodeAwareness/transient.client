@@ -1,5 +1,7 @@
 node_modules
 dist
+index.js
+index.d.ts
 
 .DS_Store
 .log
