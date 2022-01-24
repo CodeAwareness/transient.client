@@ -128,7 +128,7 @@ const connect = (config: TTransientHandler): Promise<void> => {
   serverURL = url
   wsNamespace = ns || '/'
   manager = new Manager(serverURL, socketOptions)
-  logger.info(`Transient.client initializing with ${url}/${wsNamespace}`, socketOptions)
+  logger.info(`Transient.client connecting to ${url}/${wsNamespace}`, socketOptions)
   if (!wsocket) reconnect()
 
   return new Promise((resolve, reject) => {
