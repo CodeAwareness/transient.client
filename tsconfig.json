@@ -1,20 +1,24 @@
 {
 	"compilerOptions": {
     "baseUrl": ".",
-		"outDir": "dist",
-    "strict": true,
-    "module": "es2015",
+		"outDir": "dist/cjs",
+    "strict": false,
+    "lib": ["dom", "ES2018"],
+    "target": "ES2018",
+    "types": ["jest", "node"],
     "moduleResolution": "node",
-    "lib": ["dom", "es2015"],
-    "target": "es6",
-    "types": [],
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
 		"noImplicitReturns": true,
     "declaration": true,
     "removeComments": true
 	},
-  "types": [ "node", "jest" ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-implicit-any": 0
+  },
   "include": ["src/**/*"],
 	"exclude": [
 		"node_modules"

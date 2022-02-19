@@ -7,3 +7,7 @@ index.d.ts
 .log
 yarn-error.log
 yarn.lock
+
+index.esm.js
+index.esm.d.ts
+index.esm.js.map

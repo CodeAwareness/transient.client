@@ -7,13 +7,15 @@ const production = !process.env.ROLLUP_WATCH
 
 export default [
   {
-    input: 'dist/cjs/index.js',
+    input: 'dist/esm/index.js',
     output: {
-      file: 'index.js'
+      format: 'esm',
+      sourcemap: true,
+      file: 'index.esm.js'
     },
     plugins: [
       resolve({
-        browser: true
+        browser: false
       }),
 
       commonjs({ include: 'node_modules/**', extensions: ['.js', '.ts'] }),
@@ -22,9 +24,9 @@ export default [
     ]
   },
   {
-    input: 'dist/cjs/index.d.ts',
+    input: 'dist/esm/index.d.ts',
     output: {
-      file: 'index.d.ts'
+      file: 'index.esm.d.ts'
     },
     plugins: [dts()]
   }
