@@ -9,7 +9,7 @@ export default [
   {
     input: 'dist/cjs/index.js',
     output: {
-      file: 'index.js'
+      file: 'dist/index.js'
     },
     plugins: [
       resolve({
@@ -24,7 +24,7 @@ export default [
   {
     input: 'dist/cjs/index.d.ts',
     output: {
-      file: 'index.d.ts'
+      file: 'dist/index.d.ts'
     },
     plugins: [dts()]
   }

@@ -11,7 +11,7 @@ export default [
     output: {
       format: 'esm',
       sourcemap: true,
-      file: 'index.esm.js'
+      file: 'dist/index.esm.js'
     },
     plugins: [
       resolve({
@@ -26,7 +26,7 @@ export default [
   {
     input: 'dist/esm/index.d.ts',
     output: {
-      file: 'index.esm.d.ts'
+      file: 'dist/index.esm.d.ts'
     },
     plugins: [dts()]
   }
