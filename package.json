@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "browser/nodeJS implementation of Transient Communications.",
+  "description": "browser/nodeJS implementation of Transient Client.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -46,8 +46,7 @@
   "dependencies": {
     "@types/ws": "^8.2.2",
     "isomorphic-ws": "^4.0.1",
-    "node-ipc": "^10.1.0",
-    "ws": "^8.4.2"
+    "node-ipc": "^10.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
